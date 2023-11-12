@@ -85,7 +85,7 @@ function App() {
                 type="number"
                 id="length"
                 min={6}
-                max={20}
+                max={50}
                 name="length"
                 value={values.length}
                 onChange={setValues}
