@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useForm(initialValues) {
   const [values, setValues] = useState(initialValues);
@@ -10,7 +10,7 @@ export function useForm(initialValues) {
       setValues({
         ...values,
         [e.target.name]:
-          e.target.type === 'checkbox' ? e.target.checked : e.target.value,
+          e.target.type === "checkbox" ? e.target.checked : e.target.value,
       });
     },
   ];

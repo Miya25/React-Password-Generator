@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { FaClipboard, FaTheRedYeti } from 'react-icons/fa';
-import { useForm } from './useForm';
-import { getRandomChar, getSpecialChar } from './utils';
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+import { FaClipboard, FaTheRedYeti } from "react-icons/fa";
+import { useForm } from "./useForm";
+import { getRandomChar, getSpecialChar } from "./utils";
 
 function App() {
   const [values, setValues] = useForm({
@@ -12,7 +12,7 @@ function App() {
     number: false,
     symbol: false,
   });
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState("");
 
   const fieldsArray = [
     {
@@ -35,7 +35,7 @@ function App() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    let generatedPassword = '';
+    let generatedPassword = "";
     const checkedFields = fieldsArray.filter(({ field }) => field);
 
     for (let i = 0; i < values.length; i++) {
@@ -49,16 +49,16 @@ function App() {
     if (generatedPassword) {
       setResult(generatedPassword);
     } else {
-      toast.error(' Please select at least one option');
+      toast.error(" Please select at least one option");
     }
   };
 
   const handleClipboard = async () => {
     if (result) {
       await navigator.clipboard.writeText(result);
-      toast.success('Copied to your clipboard');
+      toast.success("Copied to your clipboard");
     } else {
-      toast.error('No password to copy');
+      toast.error("No password to copy");
     }
   };
 
